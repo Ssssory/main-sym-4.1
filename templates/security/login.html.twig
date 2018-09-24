@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin auth page</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/light/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="/light/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/light/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/light/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+{% if error %}
+    <div class="container">
+        <div class="col-lg-4">
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    Have error
+                </div>
+                <div class="panel-body">
+                    <p>{{ error.message }}</p>
+                </div>
+                <div class="panel-footer">
+                    try agein
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Please Sign In</h3>
+                </div>
+                <div class="panel-body">
+                    <form role="form" action="{{ path("login") }}" method="post">
+                        <fieldset>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Login" name="_username" type="text" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Password" name="_password" type="password" value="">
+                            </div>
+                            <div class="form-group">
+                                <input class="btn btn-lg btn-success btn-block"  type="submit" value="login">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery -->
+<script src="/light/vendor/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/light/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="/light/vendor/metisMenu/metisMenu.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/light/dist/js/sb-admin-2.js"></script>
+
+</body>
+
+</html>
