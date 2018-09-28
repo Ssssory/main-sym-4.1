@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="OcLiLinks" table="oc_li_links">
+    <indexes>
+      <index name="ins_id" columns="ins_id"/>
+      <index name="donor_id" columns="donor_id"/>
+      <index name="url" columns="url"/>
+    </indexes>
+    <id name="linkId" type="integer" column="link_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="donorId" type="integer" column="donor_id" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="insId" type="integer" column="ins_id" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="url" type="string" column="url" length="2000" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

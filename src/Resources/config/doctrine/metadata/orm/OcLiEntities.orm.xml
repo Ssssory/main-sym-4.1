@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="OcLiEntities" table="oc_li_entities">
+    <indexes>
+      <index name="platform_id" columns="platform_id"/>
+      <index name="ins_id" columns="ins_id"/>
+      <index name="url" columns="url"/>
+      <index name="donor_id" columns="donor_id"/>
+      <index name="status" columns="status"/>
+      <index name="entity" columns="entity"/>
+    </indexes>
+    <id name="entityId" type="integer" column="entity_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="platformId" type="integer" column="platform_id" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="insId" type="integer" column="ins_id" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="donorId" type="integer" column="donor_id" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="url" type="string" column="url" length="2000" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="ourl" type="string" column="ourl" length="2000" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="entity" type="string" column="entity" length="64" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="status" type="integer" column="status" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>
